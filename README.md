@@ -1,2 +1,3 @@
-# BEEP_MESSAGES-
-A new coded messages app
+# BEEP! Messages
+A new coded messages app.
+apps.samuelsharp.com/beepm.html
