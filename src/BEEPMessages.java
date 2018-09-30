@@ -25,7 +25,8 @@ public class BEEPMessages implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton codesel = (JButton) e.getSource();
 		if(codesel == alphanumeric) {
-			
+			alphanumeric an = new alphanumeric();
+			an.setup();
 		}
 		else {
 			morse m = new morse();
