@@ -38,7 +38,7 @@ public class alphanumeric implements ActionListener {
 		if (bp == en) {
 			PrintWriter out;
 			try {
-				out = new PrintWriter(new File("output.txt"));
+				out = new PrintWriter(new File("code.txt"));
 				String mes = JOptionPane
 						.showInputDialog("Enter a message to be coded! LETTERS ONLY: NOT CASE SENSITIVE!");
 				String coded = encode(mes);
@@ -53,27 +53,16 @@ public class alphanumeric implements ActionListener {
 			jfc.showOpenDialog(null);
 			Scanner in;
 			try {
+				PrintWriter out = new PrintWriter(new File("decoded.txt"));
 				in = new Scanner(jfc.getSelectedFile());
 				while (in.hasNextLine()) {
 					String a = in.nextLine();
 					JOptionPane.showMessageDialog(null, "Recieved input: " + a
-							+ ". Conversion is coming in a later update. In the meantime check out the convertion chart.");
-					Desktop desktop = Desktop.getDesktop();
-					try {
-						desktop.browse(
-								new URL("http://apps.samuelsharp.com/Resources/BEEP_Messages/cipher.html").toURI());
-					} catch (MalformedURLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} catch (URISyntaxException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-
+							+ " Attempting Conversion.");
+						String op = decode(a);
+						out.println(op);
 				}
+				 out.close();
 			} catch (FileNotFoundException e1) {
 				System.err.println("There's been an error reading the file...");
 			}
@@ -175,64 +164,64 @@ public class alphanumeric implements ActionListener {
 		String currentLetter = "";
 		for(int i = 0; i<input.length(); i++) {
 			if(input.charAt(i) == ' ') {
-				if (currentLetter .equals( "1")|| currentLetter .equals( "A") {
+				if (currentLetter .equals( "1")|| currentLetter .equals( "A")) {
 					code = code + "a";
 				}
-				if (currentLetter .equals( "2")|| currentLetter .equals( "B") {
+				if (currentLetter .equals( "2")|| currentLetter .equals( "B")) {
 					code = code + "b";
 				}
-				if (currentLetter .equals( "3")|| currentLetter .equals( "C") {
+				if (currentLetter .equals( "3")|| currentLetter .equals( "C")) {
 					code = code + "c";
 				}
-				if (currentLetter .equals( "4")|| currentLetter .equals( "D") {
+				if (currentLetter .equals( "4")|| currentLetter .equals( "D")) {
 					code = code + "d";
 				}
-				if (currentLetter .equals( "5")|| currentLetter .equals( "E") {
+				if (currentLetter .equals( "5")|| currentLetter .equals( "E")) {
 					code = code + "e";
 				}
-				if (currentLetter .equals( "6")|| currentLetter .equals( "F") {
+				if (currentLetter .equals( "6")|| currentLetter .equals( "F")) {
 					code = code + "f";
 				}
-				if (currentLetter .equals( "7")|| currentLetter .equals( "G") {
+				if (currentLetter .equals( "7")|| currentLetter .equals( "G")) {
 					code = code + "g";
 				}
-				if (currentLetter .equals( "8")|| currentLetter .equals( "H") {
+				if (currentLetter .equals( "8")|| currentLetter .equals( "H")) {
 					code = code + "h";
 				}
-				if (currentLetter .equals( "9")|| currentLetter .equals( "I") {
+				if (currentLetter .equals( "9")|| currentLetter .equals( "I")) {
 					code = code + "i";
 				}
-				if (currentLetter .equals( "10")|| currentLetter .equals( "J") {
+				if (currentLetter .equals( "10")|| currentLetter .equals( "J")) {
 					code = code + "j";
 				}
-				if (currentLetter .equals( "11")|| currentLetter .equals( "K") {
+				if (currentLetter .equals( "11")|| currentLetter .equals( "K")) {
 					code = code + "k";
 				}
-				if (currentLetter .equals( "12")|| currentLetter .equals( "L") {
+				if (currentLetter .equals( "12")|| currentLetter .equals( "L")) {
 					code = code + "l";
 				}
-				if (currentLetter .equals( "13")|| currentLetter .equals( "M") {
+				if (currentLetter .equals( "13")|| currentLetter .equals( "M")) {
 					code = code + "m";
 				}
-				if (currentLetter .equals( "14")|| currentLetter .equals( "N") {
+				if (currentLetter .equals( "14")|| currentLetter .equals( "N")) {
 					code = code + "n";
 				}
-				if (currentLetter .equals( "15")|| currentLetter .equals( "O") {
+				if (currentLetter .equals( "15")|| currentLetter .equals( "O")) {
 					code = code + "o";
 				}
-				if (currentLetter .equals( "16")|| currentLetter .equals( "P") {
+				if (currentLetter .equals( "16")|| currentLetter .equals( "P")) {
 					code = code + "p";
 				}
-				if (currentLetter .equals( "17")|| currentLetter .equals( "Q") {
+				if (currentLetter .equals( "17")|| currentLetter .equals( "Q")) {
 					code = code + "q";
 				}
-				if (currentLetter .equals( "18")|| currentLetter .equals( "R") {
+				if (currentLetter .equals( "18")|| currentLetter .equals( "R")) {
 					code = code + "r";
 				}
-				if (currentLetter .equals( "19")|| currentLetter .equals( "S") {
+				if (currentLetter .equals( "19")|| currentLetter .equals( "S")) {
 					code = code + "s";
 				}
-				if (currentLetter .equals( "20")|| currentLetter .equals( "T") {
+				if (currentLetter .equals( "20")|| currentLetter .equals( "T")) {
 					code = code + "t";
 				}
 				if (currentLetter .equals( "21")|| currentLetter .equals( "U")) {
