@@ -40,7 +40,7 @@ public class alphanumeric implements ActionListener {
 			try {
 				out = new PrintWriter(new File("code.txt"));
 				String mes = JOptionPane
-						.showInputDialog("Enter a message to be coded! LETTERS ONLY: NOT CASE SENSITIVE!");
+						.showInputDialog("Enter a message to be coded! LETTERS ONLY: NOT CASE SENSITIVE! Spaces can be entered but do not display.");
 				String coded = encode(mes);
 				out.println(coded);
 				out.close();
@@ -242,6 +242,7 @@ public class alphanumeric implements ActionListener {
 				if (currentLetter .equals("26")|| currentLetter .equals( "Z")) {
 					code = code + "z";
 				}
+				currentLetter = "";
 			}
 			else {
 			currentLetter += input.charAt(i);
