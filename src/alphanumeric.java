@@ -30,6 +30,7 @@ public class alphanumeric implements ActionListener {
 		p.add(dc);
 		f.add(p);
 		f.setVisible(true);
+		f.pack();
 	}
 
 	@Override

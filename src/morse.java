@@ -12,15 +12,18 @@ JFrame f  = new JFrame();
 JButton get = new JButton("View Morse Code Alphabet");
 JButton sh = new JButton(".");
 JButton ln = new JButton("_");
+JButton sos = new JButton("SOS Distress Code");
 JPanel p = new JPanel();
 	void setup() {
 		get.addActionListener(this);
 		sh.addActionListener(this);
 		ln.addActionListener(this);
+		sos.addActionListener(this);
 		f.setVisible(true);
 		p.add(get);
 		p.add(sh);
 		p.add(ln);
+		p.add(sos);
 		f.add(p);
 	    f.pack();
 }
@@ -45,9 +48,11 @@ JPanel p = new JPanel();
 		else if(bp == sh) {
 			playSound("sh.wav");
 		}
-		else {
+		else if(bp == ln){
 			playSound("ln.wav");
-			
+		}
+		else if(bp == sos){
+			playSound("sos.wav");
 		}
 	}
 	private void playSound(String fileName) {
