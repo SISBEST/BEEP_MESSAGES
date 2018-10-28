@@ -1,13 +1,8 @@
-import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -39,9 +34,13 @@ public class alphanumeric implements ActionListener {
 		if (bp == en) {
 			PrintWriter out;
 			try {
-				out = new PrintWriter(new File("code.txt"));
-				String mes = JOptionPane
-						.showInputDialog("Enter a message to be coded! LETTERS ONLY: NOT CASE SENSITIVE! Spaces can be entered but do not display.");
+				File cdfl = new File("code.txt");
+				out = new PrintWriter(cdfl);
+
+				String mes = JOptionPane.showInputDialog(
+						"Enter a message to be coded! LETTERS ONLY: NOT CASE SENSITIVE! Spaces can be entered but do not display.");
+				String fp = "Your code file saved at " + cdfl.getAbsolutePath() + ".";
+				JOptionPane.showMessageDialog(null, fp);
 				String coded = encode(mes);
 				out.println(coded);
 				out.close();
@@ -58,12 +57,11 @@ public class alphanumeric implements ActionListener {
 				in = new Scanner(jfc.getSelectedFile());
 				while (in.hasNextLine()) {
 					String a = in.nextLine();
-					JOptionPane.showMessageDialog(null, "Recieved input: " + a
-							+ " Attempting Conversion.");
-						String op = decode(a);
-						out.println(op);
+					JOptionPane.showMessageDialog(null, "Recieved input: " + a + " Converting to.");
+					String op = decode(a);
+					out.println(op);
 				}
-				 out.close();
+				out.close();
 			} catch (FileNotFoundException e1) {
 				System.err.println("There's been an error reading the file...");
 			}
@@ -163,90 +161,92 @@ public class alphanumeric implements ActionListener {
 	String decode(String input) {
 		String code = "";
 		String currentLetter = "";
-		for(int i = 0; i<input.length(); i++) {
-			if(input.charAt(i) == ' ') {
-				if (currentLetter .equals( "1")|| currentLetter .equals( "A")) {
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == ' ') {
+				if (currentLetter.equals("1") || currentLetter.equals("A")) {
 					code = code + "a";
 				}
-				if (currentLetter .equals( "2")|| currentLetter .equals( "B")) {
+				if (currentLetter.equals("2") || currentLetter.equals("B")) {
 					code = code + "b";
 				}
-				if (currentLetter .equals( "3")|| currentLetter .equals( "C")) {
+				if (currentLetter.equals("3") || currentLetter.equals("C")) {
 					code = code + "c";
 				}
-				if (currentLetter .equals( "4")|| currentLetter .equals( "D")) {
+				if (currentLetter.equals("4") || currentLetter.equals("D")) {
 					code = code + "d";
 				}
-				if (currentLetter .equals( "5")|| currentLetter .equals( "E")) {
+				if (currentLetter.equals("5") || currentLetter.equals("E")) {
 					code = code + "e";
 				}
-				if (currentLetter .equals( "6")|| currentLetter .equals( "F")) {
+				if (currentLetter.equals("6") || currentLetter.equals("F")) {
 					code = code + "f";
 				}
-				if (currentLetter .equals( "7")|| currentLetter .equals( "G")) {
+				if (currentLetter.equals("7") || currentLetter.equals("G")) {
 					code = code + "g";
 				}
-				if (currentLetter .equals( "8")|| currentLetter .equals( "H")) {
+				if (currentLetter.equals("8") || currentLetter.equals("H")) {
 					code = code + "h";
 				}
-				if (currentLetter .equals( "9")|| currentLetter .equals( "I")) {
+				if (currentLetter.equals("9") || currentLetter.equals("I")) {
 					code = code + "i";
 				}
-				if (currentLetter .equals( "10")|| currentLetter .equals( "J")) {
+				if (currentLetter.equals("10") || currentLetter.equals("J")) {
 					code = code + "j";
 				}
-				if (currentLetter .equals( "11")|| currentLetter .equals( "K")) {
+				if (currentLetter.equals("11") || currentLetter.equals("K")) {
 					code = code + "k";
 				}
-				if (currentLetter .equals( "12")|| currentLetter .equals( "L")) {
+				if (currentLetter.equals("12") || currentLetter.equals("L")) {
 					code = code + "l";
 				}
-				if (currentLetter .equals( "13")|| currentLetter .equals( "M")) {
+				if (currentLetter.equals("13") || currentLetter.equals("M")) {
 					code = code + "m";
 				}
-				if (currentLetter .equals( "14")|| currentLetter .equals( "N")) {
+				if (currentLetter.equals("14") || currentLetter.equals("N")) {
 					code = code + "n";
 				}
-				if (currentLetter .equals( "15")|| currentLetter .equals( "O")) {
+				if (currentLetter.equals("15") || currentLetter.equals("O")) {
 					code = code + "o";
 				}
-				if (currentLetter .equals( "16")|| currentLetter .equals( "P")) {
+				if (currentLetter.equals("16") || currentLetter.equals("P")) {
 					code = code + "p";
 				}
-				if (currentLetter .equals( "17")|| currentLetter .equals( "Q")) {
+				if (currentLetter.equals("17") || currentLetter.equals("Q")) {
 					code = code + "q";
 				}
-				if (currentLetter .equals( "18")|| currentLetter .equals( "R")) {
+				if (currentLetter.equals("18") || currentLetter.equals("R")) {
 					code = code + "r";
 				}
-				if (currentLetter .equals( "19")|| currentLetter .equals( "S")) {
+				if (currentLetter.equals("19") || currentLetter.equals("S")) {
 					code = code + "s";
 				}
-				if (currentLetter .equals( "20")|| currentLetter .equals( "T")) {
+				if (currentLetter.equals("20") || currentLetter.equals("T")) {
 					code = code + "t";
 				}
-				if (currentLetter .equals( "21")|| currentLetter .equals( "U")) {
+				if (currentLetter.equals("21") || currentLetter.equals("U")) {
 					code = code + "u";
 				}
-				if (currentLetter .equals("22")|| currentLetter .equals( "V")){
+				if (currentLetter.equals("22") || currentLetter.equals("V")) {
 					code = code + "v";
 				}
-				if (currentLetter .equals("23")|| currentLetter .equals( "W")) {
+				if (currentLetter.equals("23") || currentLetter.equals("W")) {
 					code = code + "w";
 				}
-				if (currentLetter .equals("24")|| currentLetter .equals( "X")) {
+				if (currentLetter.equals("24") || currentLetter.equals("X")) {
 					code = code + "x";
 				}
-				if (currentLetter .equals("25")|| currentLetter .equals( "Y")) {
+				if (currentLetter.equals("25") || currentLetter.equals("Y")) {
 					code = code + "y";
 				}
-				if (currentLetter .equals("26")|| currentLetter .equals( "Z")) {
+				if (currentLetter.equals("26") || currentLetter.equals("Z")) {
 					code = code + "z";
 				}
+				if (currentLetter.equals("   ")) {
+					code = code + " ";
+				}
 				currentLetter = "";
-			}
-			else {
-			currentLetter += input.charAt(i);
+			} else {
+				currentLetter += input.charAt(i);
 			}
 		}
 		return code;
