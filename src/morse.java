@@ -1,4 +1,6 @@
 import java.applet.AudioClip;
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,14 +8,20 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import javax.swing.*;
+
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 public class morse implements ActionListener {
-JFrame f  = new JFrame();
-JButton get = new JButton("View Morse Code Alphabet");
-JButton sh = new JButton(".");
-JButton ln = new JButton("_");
-JButton sos = new JButton("SOS Distress Code");
-JPanel p = new JPanel();
+	JFrame f = new JFrame();
+	JButton get = new JButton("View Morse Code Alphabet");
+	JButton sh = new JButton(".");
+	JButton ln = new JButton("_");
+	JButton sos = new JButton("SOS Distress Code");
+	JPanel p = new JPanel();
+
 	void setup() {
 		get.addActionListener(this);
 		sh.addActionListener(this);
@@ -25,13 +33,16 @@ JPanel p = new JPanel();
 		p.add(ln);
 		p.add(sos);
 		f.add(p);
-	    f.pack();
-}
+		Container c = f.getContentPane();
+		c.setBackground(Color.BLUE);
+		f.pack();
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton bp = (JButton) e.getSource();
-		if(bp == get) {
-			Desktop desktop=Desktop.getDesktop();
+		if (bp == get) {
+			Desktop desktop = Desktop.getDesktop();
 			try {
 				desktop.browse(new URL("http://apps.samuelsharp.com/Resources/BEEP_Messages/morse.png").toURI());
 			} catch (MalformedURLException e1) {
@@ -44,19 +55,17 @@ JPanel p = new JPanel();
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-		}
-		else if(bp == sh) {
+		} else if (bp == sh) {
 			playSound("sh.wav");
-		}
-		else if(bp == ln){
+		} else if (bp == ln) {
 			playSound("ln.wav");
-		}
-		else if(bp == sos){
+		} else if (bp == sos) {
 			playSound("sos.wav");
 		}
 	}
+
 	private void playSound(String fileName) {
-	     AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName)); 
-	     sound.play();
+		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
+		sound.play();
 	}
 }

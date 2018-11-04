@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +17,7 @@ public class BEEPMessages implements ActionListener {
 	JFrame f = new JFrame("BEEP! Messages");
 	JButton alphanumeric = new JButton("Code/Decode text file");
 	JButton morse = new JButton("Morse Code Transmitter");
+	JButton help = new JButton("HELP ME!!!!!");
 	JPanel p = new JPanel();
 
 	public static void main(String[] args) {
@@ -54,11 +57,15 @@ public class BEEPMessages implements ActionListener {
 	void setuphome() {
 		p.add(alphanumeric);
 		p.add(morse);
+		p.add(help);
 		f.add(p);
+		Container c = f.getContentPane();
+		c.setBackground(Color.CYAN);
 		f.setVisible(true);
 		f.pack();
 		alphanumeric.addActionListener(this);
 		morse.addActionListener(this);
+		help.addActionListener(this);
 	}
 
 	@Override
@@ -67,6 +74,21 @@ public class BEEPMessages implements ActionListener {
 		if (codesel == alphanumeric) {
 			alphanumeric an = new alphanumeric();
 			an.setup();
+		}
+		if (codesel == help) {
+			Desktop desktop = Desktop.getDesktop();
+			try {
+				desktop.browse(new URL("https://appshelp.samuelsharp.com/beepm/").toURI());
+			} catch (MalformedURLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (URISyntaxException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} else {
 			morse m = new morse();
 			m.setup();

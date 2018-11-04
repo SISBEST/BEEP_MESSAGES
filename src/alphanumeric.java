@@ -1,8 +1,15 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -24,6 +31,8 @@ public class alphanumeric implements ActionListener {
 		p.add(en);
 		p.add(dc);
 		f.add(p);
+		Container c = f.getContentPane();
+		c.setBackground(Color.GREEN);
 		f.setVisible(true);
 		f.pack();
 	}
@@ -44,6 +53,20 @@ public class alphanumeric implements ActionListener {
 				String coded = encode(mes);
 				out.println(coded);
 				out.close();
+				Desktop desktop = Desktop.getDesktop();
+				try {
+					desktop.browse(new URL("https://beepm.bubbleapps.io/").toURI());
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
