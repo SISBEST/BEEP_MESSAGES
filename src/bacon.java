@@ -18,9 +18,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class alphanumeric implements ActionListener {
+public class bacon implements ActionListener {
 	JPanel p = new JPanel();
-	JFrame f = new JFrame("Encode/Decode: Alphanumeric");
+	JFrame f = new JFrame("Encode/Decode: Baconian");
 	JButton en = new JButton("Encode a message");
 	JButton dc = new JButton("Decode a message");
 	int errct = 0;
@@ -72,21 +72,18 @@ public class alphanumeric implements ActionListener {
 				e1.printStackTrace();
 			}
 		} else {
-			JFileChooser jfc = new JFileChooser();
-			jfc.showOpenDialog(null);
-			Scanner in;
 			try {
 				PrintWriter out = new PrintWriter(new File("decoded.txt"));
-				in = new Scanner(jfc.getSelectedFile());
-				while (in.hasNextLine()) {
-					String a = in.nextLine();
-					JOptionPane.showMessageDialog(null, "Recieved input: " + a + " Converting to.");
-					String op = decode(a);
-					out.println(op);
-				}
+				String op = "Sorry!";
+				out.println(op);
+				op = "Decoding the Baconian Cipher is not yet supported.";
+				out.println(op);
+				op = "Please use the key at https://en.wikipedia.org/wiki/Bacon%27s_cipher to decode a message.";
+				out.println(op);
 				out.close();
 			} catch (FileNotFoundException e1) {
-				System.err.println("There's been an error reading the file...");
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 		}
 

@@ -15,8 +15,9 @@ import javax.swing.JPanel;
 
 public class BEEPMessages implements ActionListener {
 	JFrame f = new JFrame("BEEP! Messages");
-	JButton alphanumeric = new JButton("Code/Decode text file");
+	JButton alphanumeric = new JButton("Code/Decode with alphanumeric");
 	JButton morse = new JButton("Morse Code Transmitter");
+	JButton bacon = new JButton("Code/Decode with Baconian Alphabet");
 	JButton help = new JButton("HELP ME!!!!!");
 	JPanel p = new JPanel();
 
@@ -58,6 +59,7 @@ public class BEEPMessages implements ActionListener {
 		p.add(alphanumeric);
 		p.add(morse);
 		p.add(help);
+		p.add(bacon);
 		f.add(p);
 		Container c = f.getContentPane();
 		c.setBackground(Color.CYAN);
@@ -66,6 +68,7 @@ public class BEEPMessages implements ActionListener {
 		alphanumeric.addActionListener(this);
 		morse.addActionListener(this);
 		help.addActionListener(this);
+		bacon.addActionListener(this);
 	}
 
 	@Override
@@ -74,6 +77,10 @@ public class BEEPMessages implements ActionListener {
 		if (codesel == alphanumeric) {
 			alphanumeric an = new alphanumeric();
 			an.setup();
+		}
+		if (codesel == bacon) {
+			bacon b = new bacon();
+			b.setup();
 		}
 		if (codesel == help) {
 			Desktop desktop = Desktop.getDesktop();
