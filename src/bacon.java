@@ -43,7 +43,7 @@ public class bacon implements ActionListener {
 		if (bp == en) {
 			PrintWriter out;
 			try {
-				File cdfl = new File("code.txt");
+				File cdfl = new File("code.beepm");
 				out = new PrintWriter(cdfl);
 
 				String mes = JOptionPane.showInputDialog(
@@ -73,7 +73,7 @@ public class bacon implements ActionListener {
 			}
 		} else {
 			try {
-				PrintWriter out = new PrintWriter(new File("decoded.txt"));
+				PrintWriter out = new PrintWriter(new File("decoded.beepm"));
 				String op = "Sorry!";
 				out.println(op);
 				op = "Decoding the Baconian Cipher is not yet supported.";
