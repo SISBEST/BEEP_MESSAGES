@@ -43,7 +43,7 @@ public class alphanumeric implements ActionListener {
 		if (bp == en) {
 			PrintWriter out;
 			try {
-				File cdfl = new File("code.txt");
+				File cdfl = new File("code.beepm");
 				out = new PrintWriter(cdfl);
 
 				String mes = JOptionPane.showInputDialog(
@@ -76,11 +76,11 @@ public class alphanumeric implements ActionListener {
 			jfc.showOpenDialog(null);
 			Scanner in;
 			try {
-				PrintWriter out = new PrintWriter(new File("decoded.txt"));
+				PrintWriter out = new PrintWriter(new File("decoded.beepm"));
 				in = new Scanner(jfc.getSelectedFile());
 				while (in.hasNextLine()) {
 					String a = in.nextLine();
-					JOptionPane.showMessageDialog(null, "Recieved input: " + a + " Converting to.");
+					JOptionPane.showMessageDialog(null, "Recieved input: " + a + " Converting now.");
 					String op = decode(a);
 					out.println(op);
 				}
