@@ -1,3 +1,0 @@
-Sorry!
-Decoding the Baconian Cipher is not yet supported.
-Please use the key at https://en.wikipedia.org/wiki/Bacon%27s_cipher to decode a message.

@@ -90,89 +90,94 @@ public class bacon implements ActionListener {
 	}
 
 	String encode(String input) {
-		char[] inputchars = input.toCharArray();
 		String code = "";
-		for (int i = 0; i < inputchars.length; i++) {
-			if (inputchars[i] == 'a' || inputchars[i] == 'A') {
-				code = code + "1 ";
-			}
-			if (inputchars[i] == 'b' || inputchars[i] == 'B') {
-				code = code + "2 ";
-			}
-			if (inputchars[i] == 'c' || inputchars[i] == 'C') {
-				code = code + "3 ";
-			}
-			if (inputchars[i] == 'd' || inputchars[i] == 'D') {
-				code = code + "4 ";
-			}
-			if (inputchars[i] == 'e' || inputchars[i] == 'E') {
-				code = code + "5 ";
-			}
-			if (inputchars[i] == 'f' || inputchars[i] == 'F') {
-				code = code + "6 ";
-			}
-			if (inputchars[i] == 'g' || inputchars[i] == 'G') {
-				code = code + "7 ";
-			}
-			if (inputchars[i] == 'h' || inputchars[i] == 'H') {
-				code = code + "8 ";
-			}
-			if (inputchars[i] == 'i' || inputchars[i] == 'I') {
-				code = code + "9 ";
-			}
-			if (inputchars[i] == 'j' || inputchars[i] == 'J') {
-				code = code + "10 ";
-			}
-			if (inputchars[i] == 'k' || inputchars[i] == 'K') {
-				code = code + "11 ";
-			}
-			if (inputchars[i] == 'l' || inputchars[i] == 'L') {
-				code = code + "12 ";
-			}
-			if (inputchars[i] == 'm' || inputchars[i] == 'M') {
-				code = code + "13 ";
-			}
-			if (inputchars[i] == 'n' || inputchars[i] == 'N') {
-				code = code + "14 ";
-			}
-			if (inputchars[i] == 'o' || inputchars[i] == 'O') {
-				code = code + "15 ";
-			}
-			if (inputchars[i] == 'p' || inputchars[i] == 'P') {
-				code = code + "16 ";
-			}
-			if (inputchars[i] == 'q' || inputchars[i] == 'Q') {
-				code = code + "17 ";
-			}
-			if (inputchars[i] == 'r' || inputchars[i] == 'R') {
-				code = code + "18 ";
-			}
-			if (inputchars[i] == 's' || inputchars[i] == 'S') {
-				code = code + "19 ";
-			}
-			if (inputchars[i] == 't' || inputchars[i] == 'T') {
-				code = code + "20 ";
-			}
-			if (inputchars[i] == 'u' || inputchars[i] == 'U') {
-				code = code + "21 ";
-			}
-			if (inputchars[i] == 'v' || inputchars[i] == 'V') {
-				code = code + "22 ";
-			}
-			if (inputchars[i] == 'w' || inputchars[i] == 'W') {
-				code = code + "23 ";
-			}
-			if (inputchars[i] == 'x' || inputchars[i] == 'X') {
-				code = code + "24 ";
-			}
-			if (inputchars[i] == 'y' || inputchars[i] == 'Y') {
-				code = code + "25 ";
-			}
-			if (inputchars[i] == 'z' || inputchars[i] == 'Z') {
-				code = code + "26 ";
-			}
-			if (inputchars[i] == ' ') {
-				code = code + "  ";
+		String currentLetter = "";
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == ' ') {
+				if (currentLetter.equals("a") || currentLetter.equals("A")) {
+					code = code + "aaaaa";
+				}
+				if (currentLetter.equals("b") || currentLetter.equals("B")) {
+					code = code + "aaaab";
+				}
+				if (currentLetter.equals("c") || currentLetter.equals("C")) {
+					code = code + "aaaba";
+				}
+				if (currentLetter.equals("d") || currentLetter.equals("D")) {
+					code = code + "aaabb";
+				}
+				if (currentLetter.equals("e") || currentLetter.equals("E")) {
+					code = code + "aabaa";
+				}
+				if (currentLetter.equals("f") || currentLetter.equals("F")) {
+					code = code + "aabab";
+				}
+				if (currentLetter.equals("g") || currentLetter.equals("G")) {
+					code = code + "aabba";
+				}
+				if (currentLetter.equals("h") || currentLetter.equals("H")) {
+					code = code + "aabbb";
+				}
+				if (currentLetter.equals("i") || currentLetter.equals("I")) {
+					code = code + "abaaa";
+				}
+				if (currentLetter.equals("j") || currentLetter.equals("J")) {
+					code = code + "abaab";
+				}
+				if (currentLetter.equals("k") || currentLetter.equals("K")) {
+					code = code + "ababa";
+				}
+				if (currentLetter.equals("l") || currentLetter.equals("L")) {
+					code = code + "ababb";
+				}
+				if (currentLetter.equals("m") || currentLetter.equals("M")) {
+					code = code + "abbaa";
+				}
+				if (currentLetter.equals("n") || currentLetter.equals("N")) {
+					code = code + "abbab";
+				}
+				if (currentLetter.equals("o") || currentLetter.equals("O")) {
+					code = code + "abbba";
+				}
+				if (currentLetter.equals("p") || currentLetter.equals("P")) {
+					code = code + "abbbb";
+				}
+				if (currentLetter.equals("q") || currentLetter.equals("Q")) {
+					code = code + "baaaa";
+				}
+				if (currentLetter.equals("r") || currentLetter.equals("R")) {
+					code = code + "baaab";
+				}
+				if (currentLetter.equals("s") || currentLetter.equals("S")) {
+					code = code + "baaba";
+				}
+				if (currentLetter.equals("t") || currentLetter.equals("T")) {
+					code = code + "baabb";
+				}
+				if (currentLetter.equals("u") || currentLetter.equals("U")) {
+					code = code + "babaa";
+				}
+				if (currentLetter.equals("v") || currentLetter.equals("V")) {
+					code = code + "babab";
+				}
+				if (currentLetter.equals("w") || currentLetter.equals("W")) {
+					code = code + "babba";
+				}
+				if (currentLetter.equals("x") || currentLetter.equals("X")) {
+					code = code + "babbb";
+				}
+				if (currentLetter.equals("y") || currentLetter.equals("Y")) {
+					code = code + "bbaaa";
+				}
+				if (currentLetter.equals("z") || currentLetter.equals("Z")) {
+					code = code + "bbaab";
+				}
+				if (currentLetter.equals("   ")) {
+					code = code + " ";
+				}
+				currentLetter = "";
+			} else {
+				currentLetter += input.charAt(i);
 			}
 		}
 		return code;

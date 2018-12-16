@@ -17,6 +17,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class alphanumeric implements ActionListener {
 	JPanel p = new JPanel();
@@ -72,7 +73,9 @@ public class alphanumeric implements ActionListener {
 				e1.printStackTrace();
 			}
 		} else {
+			FileNameExtensionFilter filter = new FileNameExtensionFilter("Samuel & BEEPM Files", "beepm", "scode", "sisbest", "samuel");
 			JFileChooser jfc = new JFileChooser();
+			jfc.setFileFilter(filter);
 			jfc.showOpenDialog(null);
 			Scanner in;
 			try {
